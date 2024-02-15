@@ -1,0 +1,37 @@
+syntax  ="proto3";
+option java_multiple_files = true;
+option java_package = "com.arda.models";
+import "common/address.proto";
+import "common/car.proto";
+import "dealer.proto";
+import "google/protobuf/wrappers.proto";
+
+/*
+This is my person proto file
+ */
+message Person {
+  /*
+  1-15 arası tag'ler --> 1 Byte
+  16-2047 arası tag'ler --> 2 Byte
+  Sık kullanılan alanlar için 1-15 arası sayılar,
+  Sık kullanılmayan alanlar için 16-2047 arası sayılar kullanılmalıdır.
+
+  0 --> default değer
+  Tag' ler en fazla 2 üzeri 29 eksi 1 olabilir
+  19000 ile 19999 arasındaki tagler seçilemez, ayrılmıştır
+  */
+
+  // name field
+  string name = 1; //1 is tag
+  // age field
+  google.protobuf.Int32Value age = 2; //2 is tag
+  common.Address address = 3;
+  repeated common.Car car = 4;
+  Dealer dealer = 5;
+}
+
+
+
+
+
+

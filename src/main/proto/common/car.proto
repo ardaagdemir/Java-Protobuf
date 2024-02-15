@@ -1,0 +1,18 @@
+syntax  ="proto3";
+package common;
+option java_multiple_files = true;
+option java_package = "com.arda.models";
+
+message Car {
+  string brand = 1;
+  string model = 2;
+  int32 year = 3;
+  BodyStyle body_style = 4; //nesne üzerinde set edilmediği sürece her zaman varsayılan olarak 0. değeri dönecektir.
+}
+
+enum BodyStyle {
+  UNKNOWN = 0;
+  SEDAN = 1;
+  SUV = 2;
+  CONVERTIBLE = 3;
+}
